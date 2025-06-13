@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal</title>
+</head>
+<body>
+    <h1>My Journal</h1>
+    <form method="post" action="/add">
+        <textarea name="text" rows="5" cols="60" placeholder="Write your journal entry here..."></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Entries</h2>
+    {% for entry in entries %}
+    <div class="entry">
+        <p><strong>Date:</strong> {{ entry.date }}</p>
+        <p><strong>Mood:</strong> {{ entry.mood }}</p>
+        <p>{{ entry.text }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
